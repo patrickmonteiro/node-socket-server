@@ -31,6 +31,12 @@ app.get('/deposito/:state', (req, res) => {
   res.send({mensagem: `deposito ${params}: ocorreu tudo bein`})
 })
 
+app.get('/codigobarra/:codigo', (req, res) => {
+  let params = req.params.codigo
+  io.emit('codigobarra', params)
+  res.send({mensagem: `codigo de barras ${params}: ocorreu tudo bein`})
+})
+
 io.on('connection', function(socket){
   socket.on('cartao', function(pan){
     io.emit('cartao', pan)
