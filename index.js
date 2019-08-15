@@ -7,45 +7,11 @@ app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
 });
 
-app.get('/audio/:state', (req, res) => {
+app.get('/text/:text', (req, res) => {
   let params = req.params.state
   io.emit('audio', params)
   res.send({mensagem: `audio ${params}: ocorreu tudo bein`})
 })
-
-app.get('/cartao/:id', (req, res) => {
-  let params = req.params.id
-  io.emit('cartao', params)
-  res.send({mensagem: `cartao ${params}: ocorreu tudo bein`})
-})
-
-app.get('/pin/:pin', (req, res) => {
-  let params = req.params.pin
-  io.emit('pin', params)
-  res.send({mensagem: `pin ${params}: ocorreu tudo bein`})
-})
-
-app.get('/deposito/:state', (req, res) => {
-  let params = req.params.state
-  io.emit('deposito', params)
-  res.send({mensagem: `deposito ${params}: ocorreu tudo bein`})
-})
-
-app.get('/codigobarra/:codigo', (req, res) => {
-  let params = req.params.codigo
-  io.emit('codigobarra', params)
-  res.send({mensagem: `codigo de barras ${params}: ocorreu tudo bein`})
-})
-
-io.on('connection', function(socket){
-  socket.on('cartao', function(pan){
-    io.emit('cartao', pan)
-  });
-  socket.on('pin', function(pin){
-    io.emit('pin', pin)
-  });
-});
-
 
 http.listen(port, function(){
   console.log('listening on *:' + port);
