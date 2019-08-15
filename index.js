@@ -7,7 +7,7 @@ app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
 });
 
-app.get('/text/:text', (req, res) => {
+app.get('/text/:texto', (req, res) => {
   let params = req.params.state
   io.emit('text', params)
   res.send({mensagem: `text: ${params}`})
