@@ -9,8 +9,8 @@ app.get('/', function(req, res){
 
 app.get('/text/:text', (req, res) => {
   let params = req.params.state
-  io.emit('audio', params)
-  res.send({mensagem: `audio ${params}: ocorreu tudo bein`})
+  io.emit('text', params)
+  res.send({mensagem: `text: ${params}`})
 })
 
 http.listen(port, function(){
