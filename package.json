@@ -5,13 +5,13 @@
   "dependencies": {
     "axios": "^0.18.0",
     "express": "^4.15.2",
-    "socket.io": "^1.7.3"
+    "socket.io": "^1.7.3",
+    "nodemon": "^1.17.1"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "nodemon --watch index.js --watch ./"
   },
   "devDependencies": {
-    "nodemon": "^1.17.1"
   },
   "engines": {
     "node": "10.x"
