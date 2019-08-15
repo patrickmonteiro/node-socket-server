@@ -8,7 +8,7 @@ app.get('/', function(req, res){
 });
 
 app.get('/msg/:textmsg', (req, res) => {
-  let params = req.params.codigo
+  let params = req.params.txtmsg
   io.emit('msg', params)
   res.send({mensagem: `codigo de barras ${params}: ocorreu tudo bein`})
 })
