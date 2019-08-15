@@ -7,10 +7,10 @@ app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
 });
 
-app.get('/text/:texto', (req, res) => {
+app.get('/audio/:texto', (req, res) => {
   let params = req.params.state
-  io.emit('text', params)
-  res.send({mensagem: `text: ${params}`})
+  io.emit('audio', params)
+  res.send({mensagem: `audio ${params}: ocorreu tudo bein`})
 })
 
 http.listen(port, function(){
