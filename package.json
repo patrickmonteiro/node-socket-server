@@ -4,15 +4,15 @@
   "description": "my first socket.io app",
   "dependencies": {
     "axios": "^0.18.0",
+    "cors": "^2.8.5",
     "express": "^4.15.2",
-    "socket.io": "^1.7.3",
-    "nodemon": "^1.17.1"
+    "nodemon": "^1.17.1",
+    "socket.io": "^1.7.3"
   },
   "scripts": {
     "start": "nodemon --watch index.js --watch ./"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "engines": {
     "node": "10.x"
   }
