@@ -1,5 +1,5 @@
 {
-  "name": "Socket-Chat-Example",
+  "name": "node-socket-server",
   "description": "my first socket.io app",
   "website": "https://github.com/socketio/chat-example",
   "repository": "https://github.com/socketio/chat-example",
